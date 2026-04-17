@@ -1,6 +1,6 @@
 import os
 from gestion_ventas import ingresar_ventas
-
+from analisis_ventas import analizar_ventas
 
 
 def limpiar_pantalla():
