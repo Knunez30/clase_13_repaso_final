@@ -1,6 +1,7 @@
-import csv
-import pandas as pd
 import os
+from gestion_ventas import ingresar_ventas
+
+
 
 def limpiar_pantalla():
     """Limpia la pantalla de la consola v1."""
@@ -8,25 +9,33 @@ def limpiar_pantalla():
         os.system("cls")
     else:  # Para Unix/Linux/Mac
         os.system("clear")
-def menu ():
-    """Función principal del menú del sistema de gestión de datos de ventas."""
+
+
+
+def menu():
+    """Función principal del menú del sistema de gestión de ventas."""
     while True:
         limpiar_pantalla()
-        print("\n --- Menu Principal ---")
-        print("1. Cargar datos de ventas desde un archivo CSV")
-        print("2. Mostrar estadísticas de ventas")
+        print("\n --- 🛒 Menú Principal ---")
+        print("1. Ingresar nuevas ventas (Guardar en ventas.csv)")
+        print("2. Analizar ventas (Requiere archivo de ventas en formato CSV)")
         print("3. Salir")
+
 
         opcion = input("Seleccione una opción: ")
         if opcion == "1":
-            pass
+            ingresar_ventas()
         elif opcion == "2":
             pass
         elif opcion == "3":
-            print("Saliendo del programa. ¡Hasta luego!")
+            print("¡Gracias por usar el sistema de gestión de ventas! ¡Hasta luego! 👋")
             break
+        else:
+            print("❌ Opción no válida. Por favor, seleccione una opción del menú.")
+        input("Presione Enter para continuar...")
+
 
 
 if __name__ == "__main__":
-    print ("Bienvenido al sistema de gestión de datos de ventas.")
+    print("Bienvenido al sistema de gestión de ventas!")
     menu()
